@@ -1,0 +1,12 @@
+services:
+  defender:
+    build: ./defender
+    expose:
+      - "8000"
+
+  web-server:
+    build: ./web-server
+    ports:
+      - "8080:80"
+    depends_on:
+      - defender
