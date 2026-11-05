@@ -10,3 +10,18 @@ services:
       - "8080:80"
     depends_on:
       - defender
+
+  client:
+    build: ./client
+    environment:
+      - TARGET_URL=http://web-server/health
+    depends_on:
+      - web-server
+
+  attacker:
+    build: ./attacker
+    environment:
+      - TARGET_URL=http://web-server/health
+    depends_on:
+      - web-server
+    profiles: ["ataque"]

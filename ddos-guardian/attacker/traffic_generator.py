@@ -1,4 +1,5 @@
 import os
+
 import requests
 
 URL = os.getenv("TARGET_URL", "http://localhost:8000/health")
