@@ -1,6 +1,7 @@
 import os, time
 
-import requests
+import requests # type: ignore
+
 
 URL = os.getenv("TARGET_URL", "http://localhost:8000/health")
 

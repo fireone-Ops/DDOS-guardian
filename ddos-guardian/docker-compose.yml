@@ -21,9 +21,9 @@ services:
   attacker:
     build: ./attacker
     environment:
-      TARGET_URL: http://web-server/health
-      ATRASO: "0.2"
-      TOTAL: "300"
+     - TARGET_URL=http://web-server/health
+      - ATRASO=0.2
+      - TOTAL=300
     depends_on:
       - web-server
-    profiles: ["ataque"]
+    profiles: ["ddos"]
